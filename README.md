@@ -17,7 +17,7 @@ A MERN application based on the idea of wine pairing with movies, food and meetu
 •	Deployed using Heroku (with Data).
 •	Utilize at least two libraries, packages, or technologies:
     - GraphQL
-    -Facebook Incubator
+    - Facebook Incubator
 •	Authentication of users.
 •	Polished frontend / UI.
 •	MVC Paradigm.
