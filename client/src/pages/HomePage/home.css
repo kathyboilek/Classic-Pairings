@@ -1,0 +1,47 @@
+.container {
+  border: 3px solid #393D3F;
+  height: 50vh;
+  width: 80%;
+  margin: 0 auto; 
+}
+
+.banner1 {
+  background-color: #393D3F;
+  border: 3px solid #62929E;
+  color: #E6E6E8;
+  font-size: 40px;
+  margin: 5px;
+  padding: 100px;
+}
+
+.banner2 {
+  font-family: 'Prata', serif;
+  background-color: #582A32;
+  color: #E6E6E8;
+  font-size: 40px;
+  margin: 0px;
+}
+
+.arrow-down {
+  margin: 0 auto;
+  width: 0; 
+	height: 0; 
+	border-left: 40px solid transparent;
+	border-right: 40px solid transparent;
+	border-top: 25px solid #582A32;
+	font-size: 0;
+	line-height: 0;
+}  
+
+.banner3 {
+  background-color: #393D3F;
+  border: 3px solid #62929E;
+  color: #E6E6E8;
+  font-size: 40px;
+  margin-top: 75px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+}
