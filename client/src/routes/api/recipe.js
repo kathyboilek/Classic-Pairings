@@ -1,10 +1,10 @@
 const router = require("express").Router();
-// const articleController = require("../../controllers/articleController");
+// const pairingController = require("../../controllers/pairingController");
 const axios = require("axios");
 
 const apiKey = '7606240c9d5f45889a66ebea460891ee'
 
-const queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=' +
+const queryURL = 'https://www.food2fork.com/api/search?api-key=' +
 apiKey + '&q='; 
 
 router.get("/all", (req, res) => {
@@ -14,12 +14,12 @@ router.get("/all", (req, res) => {
 });
 
 // router.route("/")
-//     .get(articleController.findAll)
-//     .post(articleController.create);
+//     .get(pairingController.findAll)
+//     .post(pairingController.create);
 
 // router.route("/:id")
-//     .get(articleController.findById)
-//     // .put(articleController.update)
-//     .delete(articleController.remove)
+//     .get(pairingController.findById)
+//     // .put(pairingController.update)
+//     .delete(pairingController.remove)
 
 module.exports = router;

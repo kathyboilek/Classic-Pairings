@@ -1,10 +1,10 @@
 const router = require("express").Router();
-// const articleController = require("../../controllers/articleController");
+// const articleController = require("../../controllers/pairingController");
 const axios = require("axios");
 
-const apiKey = '7606240c9d5f45889a66ebea460891ee'
+const apiKey = '3aa60972678db4e252c939f92a674cb94aa10572'
 
-const queryURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=' +
+const queryURL = 'http://api-public.guidebox.com/v2/?api-key=' +
 apiKey + '&q='; 
 
 router.get("/all", (req, res) => {
