@@ -9,16 +9,6 @@ import Events from '../pages/EventsPage';
 import Contact from '../pages/ContactPage';
 import GetStarted from '../pages/GetStartedPage';
 
-const path = require("path");
-const router = require("express").Router();
-const apiRoutes = require("./api");
-
-router.use("/api", apiRoutes);
-
-router.use(function(req, res){
-    res.sendFile(path.join(__dirname, "../client/public/index.html"));
-});
-
 const Routes = () => (
   <Router>
      <Switch>
@@ -36,4 +26,4 @@ const Routes = () => (
  
 
 
-module.exports = Routes;
+export default Routes;

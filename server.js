@@ -8,7 +8,7 @@ let db = require("./models");
 
 
 const app = express();
-const PORT = 3001;
+const PORT = 3000;
 
 // Construct a schema, using GraphQL schema language
 const schema = buildSchema(`
