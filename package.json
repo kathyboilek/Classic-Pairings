@@ -7,10 +7,15 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
     "cli": "^1.0.1",
+    "dotenv": "^6.1.0",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
     "graphql": "^14.0.2",
-    "if-env": "^1.0.4"
+    "react": "^16.5.2",
+    "react-apollo": "^2.0.4",
+    "react-dom": "^16.5.2",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.0.4"
   },
   "main": "server.js",
   "scripts": {
@@ -32,5 +37,16 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "A MERN application based on the idea of wine pairing with movies, food and meetups in the Central Florida region.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kathyboilek/Classic-Pairings.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kathyboilek/Classic-Pairings/issues"
+  },
+  "homepage": "https://github.com/kathyboilek/Classic-Pairings#readme"
 }

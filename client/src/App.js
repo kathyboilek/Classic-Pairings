@@ -1,28 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import Routes from './routes/index';
+//import {ApolloProvider,} from 'react-apollo';
 import './App.css';
+
+//import createClient from './apollo/create-client';
+//import RepoInfoWithData from './react/repo-info-issues';
+
+//const token = 'YOUR TOKEN HERE';
+//const client = createClient(token);
 
 class App extends Component {
   render() {
+ 
     return (
+ 
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
+          <div className="App-header">
+           <img src={logo} className="App-logo" alt="logo" />
+           <h2>Welcome to React</h2>
+          </div>
+          <p className="App-intro">
+              To get started, edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
       </div>
-    );
+      );
   }
 }
 
 export default App;
+
+
+
+
+
+
+
+      
