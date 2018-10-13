@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './movies.css';
 import Nav from '../../components/NavBar';
 import Footer from '../../components/Footer';
+import movie from '../../routes/api/movie';
 
 class Movies extends Component {
   render() {

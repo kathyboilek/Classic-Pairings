@@ -37,5 +37,16 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "description": "A MERN application based on the idea of wine pairing with movies, food and meetups in the Central Florida region.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kathyboilek/Classic-Pairings.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kathyboilek/Classic-Pairings/issues"
+  },
+  "homepage": "https://github.com/kathyboilek/Classic-Pairings#readme"
 }
