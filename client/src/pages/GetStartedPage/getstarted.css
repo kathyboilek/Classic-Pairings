@@ -5,12 +5,12 @@
   margin: 0 auto; 
 }
 
-.item {
-  background-color: #393D3F;
+.item1 {
+  background-color: #0000;
   border: 3px solid #62929E;
   color: #E6E6E8;
   font-size: 40px;
-  margin: 5px;
+  margin: 250px;
   
 }
 
