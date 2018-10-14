@@ -19,6 +19,7 @@ A MERN application based on the idea of wine pairing with movies, food and meetu
     - GraphQL
     - Facebook Incubator
 •	Authentication of users.
+    - Amplify user-signin enable will enable Amazon Cognito in our project with default settings, including 2 factor authentication with SMS (we will add TOTP later). If you would like more control over how your authentication provider is created, you can either pass the -p flag to specify a more detailed configuration (amplify user-signin enable -p), or you can go to Amazon Cognito to directly create and configure the service in the console.
 •	Polished frontend / UI.
 •	MVC Paradigm.
 •	Good quality coding standards (indentation, scoping, naming).
