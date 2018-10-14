@@ -3,25 +3,39 @@ A MERN application based on the idea of wine pairing with movies, food and meetu
 
 # What's expected for the project:
 •	Build should have utility.
+
 •	Market or real-world research that proves our idea has REAL value to people.
+
 •	Perform research on other web / mobile applications in our app's domain.
+
 •	Report problems we're facing along the way.
+
 •	Use Trello and GitHub.
+
 •	Dig deep into documentation and external resources to find the tools we need.
 
-# Required of each group, each project:
-•	ReactJS.
+# Requirements:
+•	ReactJS
+
 •	A Node and Express Web Server.
+
 •	Backed by MongoDB Database with Mongoose ORM.
+
 •	Both GET and POST routes for retrieving and adding new data.
+
 •	Deployed using Heroku (with Data).
+
 •	Utilize at least two libraries, packages, or technologies:
     - GraphQL
     - Facebook Incubator
+
 •	Authentication of users.
-    - Amplify user-signin enable will enable Amazon Cognito in our project with default settings, including 2 factor authentication with SMS (we will add TOTP later). If you would like more control over how your authentication provider is created, you can either pass the -p flag to specify a more detailed configuration (amplify user-signin enable -p), or you can go to Amazon Cognito to directly create and configure the service in the console.
-•	Polished frontend / UI.  (<iframe width="700" height="525" src="https://www.youtube.com/embed/Zi-66QybJ9A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>)
-•	MVC Paradigm.
+    - Amplify user-signin enable will enable Amazon Cognito in our project with default settings, including 2 factor authentication with SMS (we will add TOTP later). If you would like more control over how your authentication provider is created, you can either pass the -p flag to specify a more detailed configuration (amplify user-signin enable -p), or you can go to Amazon Cognito to directly create and configure the service in the console. (https://www.youtube.com/embed/Zi-66QybJ9A)
+
+•	Polished frontend / UI
+
+•	MVC Paradigm
+
 •	Good quality coding standards (indentation, scoping, naming).
 
 # Concept
