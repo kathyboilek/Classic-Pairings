@@ -10,6 +10,7 @@
     "dotenv": "^6.1.0",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
+    "glamor": "^2.20.40",
     "graphql": "^14.0.2",
     "react": "^16.5.2",
     "react-apollo": "^2.0.4",
@@ -32,6 +33,12 @@
     "concurrently": "^4.0.1",
     "nodemon": "^1.18.4"
   },
+  "peerDependencies": {
+    "apollo-client": "^2.3.8",
+    "react": "0.14.x || 15.* || ^15.0.0 || ^16.0.0",
+    "graphql": "^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0"
+  },
+  
   "browserslist": [
     ">0.2%",
     "not dead",
