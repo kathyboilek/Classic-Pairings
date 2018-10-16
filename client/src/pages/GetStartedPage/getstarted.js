@@ -10,7 +10,7 @@ class GetStarted extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.state = {
-      username: '',
+      email: '',
       password: '',
     };
   }
@@ -20,8 +20,8 @@ class GetStarted extends Component {
   }
 
   handleSubmit() {
-    const { username, password } = this.state;
-    console.log('username', username);
+    const { email, password } = this.state;
+    console.log('email', email);
     console.log('password', password);
     // Logic for register
   }
@@ -31,17 +31,27 @@ class GetStarted extends Component {
       <div className="Contact">
         <Nav />
         <div className="Container">
+          <div className="item0">
+            <h1 className="create">Create an Account</h1>
+            <h3 className="text1">It's free, only takes a minute, and will make future visits quicker and easier. Take advantages of the many benefits, including:
+              <ul className="reasons">
+                <li>Coffee</li>
+                <li>Tea</li>
+                <li>Milk</li>
+              </ul>
+            </h3>
+          </div>
           <div className="item1">
             <form>
               <FormGroup
                 controlId="formBasicText"
               >
-                <ControlLabel>Username</ControlLabel>
+                <ControlLabel>Email Address</ControlLabel>
                 <FormControl
                   type="text"
-                  name="username"
-                  value={this.state.username}
-                  placeholder="Enter username"
+                  name="email"
+                  value={this.state.email}
+                  placeholder="Enter email address"
                   onChange={this.handleChange}
                 />
 
@@ -58,9 +68,6 @@ class GetStarted extends Component {
               <Button bsStyle="primary" onClick={this.handleSubmit}>Register</Button>
             </form>
           </div>
-          <div className="item2">30</div>
-          <div className="item3">31</div>
-          <div className="item4">32</div>
         </div>
         <Footer />
       </div>

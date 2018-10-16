@@ -26,8 +26,8 @@ app.use('/graphql', graphqlHTTP({
 //const token = 'YOUR TOKEN HERE';
 //const client = createClient(token);
 
-app.listen(3000);
-console.log('Running a GraphQL API server at localhost:3000/graphql');
+app.listen(3001);
+console.log('Running a GraphQL API server at localhost:3001/graphql');
 
 
 // Define middleware here

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import './food.css';
+import './recipes.css';
 import Nav from '../../components/NavBar';
 import Footer from '../../components/Footer';
 
-class Food extends Component {
+class Recipes extends Component {
   render() {
     return (
-      <div className="Food">
+      <div className="Recipes">
         <Nav />
         <div className="Container">
           <div className="item">13</div>
@@ -20,4 +20,4 @@ class Food extends Component {
   }
 }
 
-export default Food;
+export default Recipes;
