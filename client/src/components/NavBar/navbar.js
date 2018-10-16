@@ -68,7 +68,7 @@ class Nav extends Component {
           <li><Link to="/">Home</Link></li>
           <li><Link to="/join">Join</Link></li>
           <li><Link to="/wines">Wines</Link></li>
-          <li><Link to="/food">Foods</Link></li>
+          <li><Link to="/food">Recipes</Link></li>
           <li><Link to="/movies">Movies</Link></li>
           <li><Link to="/events">Events</Link></li>
           <li><Link to="/contactus">Contact Us</Link></li>

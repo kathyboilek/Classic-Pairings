@@ -1,20 +1,67 @@
-.container {
-  border: 3px solid #393D3F;
-  height: 50vh;
-  width: 80%;
-  margin: 0 auto; 
+.Container {
+  display: flex;
+  max-width: 100%;
 }
 
-.item {
-  background-color: #393D3F;
-  border: 3px solid #62929E;
-  color: #E6E6E8;
-  font-size: 40px;
-  margin: 5px;
+
+.wine-list {
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+  border: 3px solid #572A32;
+  color: #000;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.wine-list .list {
+  padding-left: 20px;
+  list-style: none;
+}
+
+.wine-list h3 {
+  font-size: 24px;
+}
+
+.section-name {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.category-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
   
 }
 
-.container {
+.wine-banner {
   display: flex;
-  flex-direction: column-reverse;
+  background-color: #FFF;
+  border: 3px solid #572A32;
+  color: #000;
+  font-size: 12px;
+  margin-top: 20px;
+  margin-left: 75px;
+  width: 900px;
+  height: 180px;
+}
+
+.wine-cards {
+  display: flex;
+  flex-direction: row;
+  background-color: #FFF;
+  border: 3px solid #572A32;
+  color: #000;
+  font-size: 12px;
+  margin-left: 75px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 900px;
+  height: 300px;
 }
