@@ -7,7 +7,6 @@ import Recipes from '../pages/RecipesPage';
 import Movies from '../pages/MoviesPage';
 import Events from '../pages/EventsPage';
 import Contact from '../pages/ContactPage';
-import GetStarted from '../pages/GetStartedPage';
 
 const Routes = () => (
   <Router>
@@ -19,7 +18,6 @@ const Routes = () => (
        <Route exact path="/movies" component={Movies} />
        <Route exact path="/events" component={Events} />
        <Route exact path="/contactus" component={Contact} />
-       <Route exact path="/getstarted" component={GetStarted} />
      </Switch>
   </Router> 
  );
