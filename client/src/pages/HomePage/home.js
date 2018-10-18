@@ -12,9 +12,9 @@ class Home extends Component {
         <div className="Container">
         <Carousel />
           {/* <div className="banner1">1</div> */}
-          <div className="banner2">Let us help you how...</div>
-          <div className="arrow-down"></div>
-          <div className="banner3">3</div>
+          {/* <div className="banner2">Let us help you how...</div> */}
+          {/* <div className="arrow-down"></div> */}
+          {/* <div className="banner3">3</div> */}
         </div>
         <Footer />  
       </div>
