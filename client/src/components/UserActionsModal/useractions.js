@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Modal, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import './useractions.css';
+import logo from '../../images/logo-wine.png';
 
 class GetStarted extends Component {
   constructor() {
@@ -39,7 +40,19 @@ class GetStarted extends Component {
       <div className="static-modal">
         <Modal.Dialog>
           <Modal.Header>
-            <Modal.Title>{typeModal === 'sign-in' ? 'Sign In' : 'Register'}</Modal.Title>
+            <Modal.Title>
+              <img alt="logo" src={logo}/>
+
+              {typeModal === 'sign-in' &&
+                <span className="sign-in">Sign In</span>
+              }
+              {typeModal === 'register' &&
+                <React.Fragment>
+                  <span className="register">Register</span>
+                  <p></p>
+                </React.Fragment>
+              }
+            </Modal.Title>
           </Modal.Header>
 
           <Modal.Body>

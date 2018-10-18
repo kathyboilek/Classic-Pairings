@@ -13,6 +13,8 @@ class Wines extends Component {
       wineName: '',
       wineColor: '',
       wineCountry: '',
+      wineRegions: '',
+      wineVintage: '',
     }
   }
 
@@ -24,7 +26,7 @@ class Wines extends Component {
     })
   };
 
-  filterWines = (allWines, wineName, wineColor, wineCountry) => {
+  filterWines = (allWines, wineName, wineColor, wineCountry, wineRegions, wineVintage) => {
     let filteredWines = allWines;
     
     if (wineName)
@@ -36,15 +38,24 @@ class Wines extends Component {
     if (wineCountry)
       filteredWines = filteredWines.filter(wine => wine.country === wineCountry);
 
+    if (wineRegions)
+      filteredWines = filteredWines.filter(wine => wine.regions.includes(wineRegions));
+
+    if (wineVintage)
+      filteredWines = filteredWines.filter(wine => wine.vintage === wineVintage);
+
+
     return filteredWines;
   }
 
   render() {
-    const { wineName, wineColor, wineCountry } = this.state;
+    const { wineName, wineColor, wineCountry, wineRegions, wineVintage } = this.state;
     // Mock API (Fake API for tests purpose)
     const wineList = ['Petrus, Pomerol', 'Pinot Noir'];
     const colorList = ['Red', 'White', 'Rosé', 'Sparkling', 'Cider'];
     const countryList = ['France', 'Germany'];
+    const regionsList = ['Bordeaux', 'Alpine']
+    const vintageList = ['2000', '2001']
 
     const responseAPI = {
       "count": 1,
@@ -60,7 +71,7 @@ class Wines extends Component {
           "color": "Red",
           "wine_type": "",
           "regions": [
-            "Bordeaux"
+            "Alpine"
           ],
           "country": "France",
           "classification": null,
@@ -86,7 +97,7 @@ class Wines extends Component {
           ],
           "country": "Germany",
           "classification": null,
-          "vintage": "2000",
+          "vintage": "2001",
           "date": "2016-05-12",
           "is_primeurs": false,
           "score": 99.02,
@@ -98,7 +109,7 @@ class Wines extends Component {
       ]
     };
 
-    const filteredWines = this.filterWines(responseAPI.results, wineName, wineColor, wineCountry);
+    const filteredWines = this.filterWines(responseAPI.results, wineName, wineColor, wineCountry, wineRegions, wineVintage);
 
     return (
       <div className="Wines">
@@ -122,6 +133,14 @@ class Wines extends Component {
                 <li className="category-name">Country</li>
                 {
                   countryList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineCountry" onChange={this.handleFilter} /> {wine}</li>)
+                }
+                <li className="category-name">Regions</li>
+                {
+                  regionsList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineRegions" onChange={this.handleFilter} /> {wine}</li>)
+                }
+                <li className="category-name">Vintage</li>
+                {
+                  vintageList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineVintage" onChange={this.handleFilter} /> {wine}</li>)
                 }
               </ul>
             </div>  
