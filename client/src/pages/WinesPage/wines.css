@@ -1,8 +1,8 @@
 .Container {
   display: flex;
   max-width: 100%;
+  padding: 0px 25px;
 }
-
 
 .wine-list {
   display: flex;
@@ -34,10 +34,16 @@
   margin-top: 15px;
 }
 
+.box1 {
+  min-width: 250px;
+}
+
 .box2 {
   display: flex;
   flex-direction: column;
-  
+  align-items: flex-end;
+  width: 100%;
+  padding-left: 30px;
 }
 
 .wine-banner {
@@ -48,13 +54,14 @@
   font-size: 12px;
   margin-top: 20px;
   margin-left: 75px;
-  width: 900px;
+  width: 100%;
   height: 180px;
 }
 
 .wine-cards {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   background-color: #FFF;
   border: 3px solid #572A32;
   color: #000;
@@ -62,6 +69,32 @@
   margin-left: 75px;
   margin-top: 30px;
   margin-bottom: 20px;
-  width: 900px;
-  height: 300px;
+  width: 100%;
+}
+
+.card {
+  margin: 10px;
+  width: 200px;
+}
+
+@media all and (max-width: 800px) {
+  .Container {
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  .card {
+    width: calc(50% - 20px);
+  }
+
+  .box1, .box2 {
+    padding: 0px 15px;
+  }
+} 
+
+@media all and (max-width: 600px) {
+  .card {
+    width: 100%;
+    height: auto;
+  }  
 }
