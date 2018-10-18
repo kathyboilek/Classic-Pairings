@@ -5,7 +5,7 @@ import { Card, CardImg, CardText, CardBody,
 
 const WineCards = (props) => {
   return (
-    <div>
+    <React.Fragment>
       {
         props.wines.map(wine => (
           <Card key={wine.wine_id}>
@@ -20,7 +20,7 @@ const WineCards = (props) => {
         ))
       }
       
-    </div>
+    </React.Fragment>
   );
 };
 
