@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Modal, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+// import { Modal, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import UserActions from '../UserActionsModal';
 import logo from '../../images/logo-wine.png';
 
