@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import Routes from './routes';
 //import {ApolloProvider,} from 'react-apollo';
 import './App.css';
-import SignUp from './SignUp'
+import SignUp from './SignIn'
 import Header from './Header'
 import Router from './Router'
+
+
 //import createClient from './apollo/create-client';
 //import RepoInfoWithData from './react/repo-info-issues';
 
@@ -30,6 +32,7 @@ import Router from './Router'
 //   }
 // }
 
+//dynamically populated by either the HomePage or the Results component
   class App extends Component {
     render() {
       return (

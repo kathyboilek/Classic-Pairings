@@ -5,7 +5,7 @@ class Header extends React.Component {
   render() {
     return (
       <div {...css(styles.container)}>
-        <h2 {...css(styles.title)}>Auth Demo</h2>
+        <h2 {...css(styles.title)}>Classic Pairings</h2>
       </div>
     )
   }

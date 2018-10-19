@@ -10,7 +10,7 @@ class SignUp extends React.Component {
     username: '',
     password: '',
     email: '',
-    phone_number: '',
+    // phone_number: '',
     authCode: '',
     showConfirmation: false
   }
@@ -20,13 +20,13 @@ class SignUp extends React.Component {
     })
   }
   signUp = () => {
-    const { username, password, email, phone_number } = this.state
+    const { username, password, email } = this.state
     Auth.signUp({
       username,
       password,
       attributes: {
-        email,
-        phone_number
+        email
+        // phone_number
       }
     })
     .then(() => this.setState({ showConfirmation: true }))
@@ -60,11 +60,11 @@ class SignUp extends React.Component {
                 placeholder='Email'
                 onChange={evt => this.onChange('email', evt.target.value)}
               />
-              <input
+              {/* <input
                 {...css(styles.input)}
                 placeholder='Phone Number'
                 onChange={evt => this.onChange('phone_number', evt.target.value)}
-              />
+              /> */}
               <div {...css(styles.button)} onClick={this.signUp}>
                 <p {...css(styles.buttonText)}>Sign Up</p>
               </div>

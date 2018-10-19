@@ -1,5 +1,5 @@
 const router = require("express").Router();
-// const articleController = require("../../controllers/pairingController");
+const pairingController = require("../../controllers/pairingController");
 const axios = require("axios");
 
 const apiKey = '3aa60972678db4e252c939f92a674cb94aa10572'
@@ -14,12 +14,12 @@ router.get("/all", (req, res) => {
 });
 
 // router.route("/")
-//     .get(articleController.findAll)
-//     .post(articleController.create);
+//     .get(pairingController.findAll)
+//     .post(pairingController.create);
 
 // router.route("/:id")
-//     .get(articleController.findById)
-//     // .put(articleController.update)
-//     .delete(articleController.remove)
+//     .get(pairingController.findById)
+//     .put(pairingController.update)
+//     .delete(pairingController.remove)
 
 module.exports = router;

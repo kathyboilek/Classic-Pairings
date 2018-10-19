@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Modal, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+
 import './useractions.css';
 import logo from '../../images/logo-wine.png';
+
 
 class GetStarted extends Component {
   constructor() {
@@ -25,6 +27,10 @@ class GetStarted extends Component {
     
     if (typeModal === 'sign-in') {
       // Add here code to sign in
+
+      
+
+
     }
     else if (typeModal === 'register') {
       // Add here code to register

@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 // configure AWS Amplify at the root of the project
 import config from './aws-exports'
 import Amplify from 'aws-amplify'
+
 Amplify.configure(config)
 
 ReactDOM.render(<App />, document.getElementById('root'))
@@ -15,3 +16,4 @@ ReactDOM.render(<App />, document.getElementById('root'))
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.register();
+

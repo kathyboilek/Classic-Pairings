@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 // import { Modal, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import UserActions from '../UserActionsModal';
+// import userInfo from '../userInfo';
+import SignIn from '../../SignIn';
+import SignUp from '../../SignUp';
 import logo from '../../images/logo-wine.png';
 
 import './navbar.css';
@@ -39,19 +42,19 @@ class Nav extends Component {
           </div>
           <ul className="navigation">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/join">Join</Link></li>
+            {/* <li><Link to="/join">Join</Link></li> */}
             <li><Link to="/wines">Wines</Link></li>
             <li><Link to="/recipes">Recipes</Link></li>
             <li><Link to="/movies">Movies</Link></li>
             <li><Link to="/events">Events</Link></li>
             <li><Link to="/contactus">Contact Us</Link></li>
-            <li className='userinfo' onClick={() => this.toggleModal('sign-in')}>
+            <li className='userInfo' onClick={() => this.toggleModal('SignIn')}>
               <a href="#">
                 Sign In
               </a>
             </li>
             {/* <li className='userinfo'><Link to="/getstarted">Get Started</Link></li> */}
-            <li className='userinfo' onClick={() => this.toggleModal('register')}>
+            <li className='userInfo' onClick={() => this.toggleModal('signup')}>
               <a href="#">
                 Register
               </a>

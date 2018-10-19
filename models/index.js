@@ -1,5 +1,5 @@
 module.exports = {
-    Wine: require("./wine"),
-    Movie: require("./movie"),
-    Recipe: require("./recipe")
+    Wine: require("../routes/api/wine"),
+    Movie: require("../routes/api/movie"),
+    Recipe: require("../routes/api/recipe")
 };
