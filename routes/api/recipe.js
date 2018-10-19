@@ -2,9 +2,9 @@ const router = require("express").Router();
 // const pairingController = require("../../controllers/pairingController");
 const axios = require("axios");
 
-const apiKey = '7606240c9d5f45889a66ebea460891ee'
+const apiKey = 'a7065834b36529e3cf15043f9180d627'
 
-const queryURL = 'https://www.food2fork.com/api/search?api-key=' +
+const queryURL = 'https://www.food2fork.com/api/search?key=' +
 apiKey + '&q='; 
 
 router.get("/all", (req, res) => {
