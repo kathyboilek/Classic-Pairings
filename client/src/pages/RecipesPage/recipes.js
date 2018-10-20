@@ -85,7 +85,7 @@ class Recipes extends Component {
           </div>
           </div>
           <div className="box2">
-          <div className="wine-banner">Banner</div>  
+          {/* <div className="wine-banner">Banner</div>   */}
           <div className="wine-cards">
             <RecipeCards recipes={filteredRecipes} />
           </div>  

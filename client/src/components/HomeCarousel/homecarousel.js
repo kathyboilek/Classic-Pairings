@@ -1,17 +1,17 @@
 import React from 'react';
 import './homecarousel.css';
 import Carousel from 'nuka-carousel';
+import pic1 from '../../images/happy-couple.jpg';
+import pic2 from '../../images/wine-food.jpg';
+import pic3 from '../../images/wine-girl.jpg';
 
 export default class extends React.Component {
   render() {
     return (
-      <Carousel autoplay>
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide1" />
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide2" />
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide3" />
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide4" />
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide5" />
-        <img src="http://placehold.it/1000x400/ffffff/c0392b/&text=slide6" />
+      <Carousel autoplay wrapAround autoplayInterval={1500} speed={700} pauseOnHover={false}>
+          <img alt="pic1" src={pic1} />
+          <img alt="pic2" src={pic2} />
+          <img alt="pic3" src={pic3} />
       </Carousel>
     );
   }

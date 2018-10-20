@@ -48,15 +48,15 @@ class Nav extends Component {
             <li><Link to="/movies">Movies</Link></li>
             <li><Link to="/events">Events</Link></li>
             <li><Link to="/contactus">Contact Us</Link></li>
-            <li className='userInfo' onClick={() => this.toggleModal('SignIn')}>
+            <li className='userInfo' onClick={() => this.toggleModal('sign-in')}>
               <a href="#">
                 Sign In
               </a>
             </li>
             {/* <li className='userinfo'><Link to="/getstarted">Get Started</Link></li> */}
-            <li className='userInfo' onClick={() => this.toggleModal('signup')}>
+            <li className='userInfo' onClick={() => this.toggleModal('sign-up')}>
               <a href="#">
-                Register
+                Sign Up
               </a>
             </li>
           </ul>

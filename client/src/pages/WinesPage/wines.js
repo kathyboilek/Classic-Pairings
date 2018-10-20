@@ -3,6 +3,7 @@ import Nav from '../../components/NavBar';
 import './wines.css';
 import Footer from '../../components/Footer';
 import WineCards from '../../components/WineCards';
+import winebanner from '../../images/wine-banner.png';  
 
 class Wines extends Component {
   constructor() {
@@ -147,7 +148,9 @@ class Wines extends Component {
           </div>
           </div>
           <div className="box2">
-          <div className="wine-banner">Banner</div>  
+          {/* <div className="wine-banner">
+            <img alt="winebanner" src={winebanner}/>
+          </div>   */}
           <div className="wine-cards">
             <WineCards wines={filteredWines} />
           </div>  
