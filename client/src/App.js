@@ -3,9 +3,8 @@ import React, { Component } from 'react';
 import Routes from './routes';
 //import {ApolloProvider,} from 'react-apollo';
 import './App.css';
-import SignUp from './SignIn'
 import Header from './Header'
-import Router from './Router'
+
 
 
 //import createClient from './apollo/create-client';

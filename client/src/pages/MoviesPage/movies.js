@@ -4,17 +4,21 @@ import Nav from '../../components/NavBar';
 import Footer from '../../components/Footer';
 
 
+
 class Movies extends Component {
+
   constructor() {
     super();
 
     this.handleFilter = this.handleFilter.bind(this);
     this.state = {
+
       movie_id: '',
       purchase_web_sources: '',
       purchase_android_sources: '',
       purchase_ios_sources: '',
       genres: '',
+
     }
   }
 
@@ -25,6 +29,7 @@ class Movies extends Component {
       [event.target.name]: event.target.value
     })
   };
+
 
   filterMovies = (allMovies, movie_id, purchase_web_sources, purchase_android_sources, purchase_ios_sources, genres) => {
     let filteredMovies = allMovies;
@@ -58,6 +63,7 @@ class Movies extends Component {
     const purchase_android_sourcesList = ['vudu'];
     const purchase_ios_sourcesList = ['itunes'];
     const genresList = ['Drama']
+
 
     const responseAPI = {
       "purchase_web_sources": [
@@ -130,7 +136,9 @@ class Movies extends Component {
     ]
    };
 
+
     const filteredMovies = this.filterMovies(responseAPI.results, purchase_web_sources, purchase_android_sources, purchase_ios_sources, genres);
+
 
     return (
       <div className="Movies">
@@ -140,6 +148,7 @@ class Movies extends Component {
         <div className="Container">
           <div className="box1">
           <div className="filter-search">
+
             <div className="movie-list">
               <h3>Filter your search:</h3>
               <ul className="list">
@@ -158,15 +167,18 @@ class Movies extends Component {
                 <li className="category-name">Genres</li>
                 {
                   genresList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="movieRegions" onChange={this.handleFilter} /> {movie}</li>)
+
                 }
               </ul>
             </div>  
           </div>
           </div>
           <div className="box2">
+
           {/* <div className="movie-banner">Banner</div>   */}
           <div className="movie-cards">
             <movieCards movies={filteredMovies} />
+
           </div>  
           </div> 
         </div>
@@ -175,6 +187,5 @@ class Movies extends Component {
     );
   }
 }
-
 
 export default Movies;
