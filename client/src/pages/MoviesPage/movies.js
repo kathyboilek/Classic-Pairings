@@ -4,18 +4,17 @@ import Nav from '../../components/NavBar';
 import Footer from '../../components/Footer';
 
 
-class Wines extends Component {
+class Movies extends Component {
   constructor() {
     super();
 
     this.handleFilter = this.handleFilter.bind(this);
     this.state = {
-      movie_id:: '',
-      wineName: '',
-      wineColor: '',
-      wineCountry: '',
-      wineRegions: '',
-      Vintage: '',
+      movie_id: '',
+      purchase_web_sources: '',
+      purchase_android_sources: '',
+      purchase_ios_sources: '',
+      genres: '',
     }
   }
 
@@ -27,36 +26,38 @@ class Wines extends Component {
     })
   };
 
-  filterWines = (allWines, wineName, wineColor, wineCountry, wineRegions, wineVintage) => {
-    let filteredWines = allWines;
+  filterMovies = (allMovies, movie_id, purchase_web_sources, purchase_android_sources, purchase_ios_sources, genres) => {
+    let filteredMovies = allMovies;
+
+    if (allMovies)
+    filteredMovies = filteredMovies.filter(movie => movie.movie === allMovies);
+
+    if (movie_id)
+      filteredMovies = filteredMovies.filter(movie => movie.movie === movie_id);
+
+    if (purchase_web_sources)
+      filteredMovies = filteredMovies.filter(movie => movie.purchase_web_sources.includes(purchase_web_sources));
     
-    if (wineName)
-      filteredWines = filteredWines.filter(wine => wine.wine === wineName);
+    if (purchase_android_sources)
+      filteredMovies = filteredMovies.filter(movie => movie.purchase_android_sources.includes(purchase_android_sources));
 
-    if (wineColor)
-      filteredWines = filteredWines.filter(wine => wine.color === wineColor);
-    
-    if (wineCountry)
-      filteredWines = filteredWines.filter(wine => wine.country === wineCountry);
+    if (purchase_ios_sources)
+      filteredMovies = filteredMovies.filter(movie => movie.purchase_ios_sources.includes(purchase_ios_sources));
 
-    if (wineRegions)
-      filteredWines = filteredWines.filter(wine => wine.regions.includes(wineRegions));
-
-    if (wineVintage)
-      filteredWines = filteredWines.filter(wine => wine.vintage === wineVintage);
+    if (genres)
+      filteredMovies = filteredMovies.filter(movie => movie.genres === genres);
 
 
-    return filteredWines;
+    return filteredMovies;
   }
 
   render() {
-    const { wineName, wineColor, wineCountry, wineRegions, wineVintage } = this.state;
+    const { movie_id, purchase_web_sources, purchase_android_source, purchase_ios_sources, genres } = this.state;
     // Mock API (Fake API for tests purpose)
-    const wineList = ['Petrus, Pomerol', 'Pinot Noir'];
-    const colorList = ['Red', 'White', 'Rosé', 'Sparkling', 'Cider'];
-    const countryList = ['France', 'Germany'];
-    const regionsList = ['Bordeaux', 'Alpine']
-    const vintageList = ['2000', '2001']
+    const purchase_web_sourcesList = ['itunes'];
+    const purchase_android_sourcesList = ['vudu'];
+    const purchase_ios_sourcesList = ['itunes'];
+    const genresList = ['Drama']
 
     const responseAPI = {
       "purchase_web_sources": [
@@ -129,47 +130,43 @@ class Wines extends Component {
     ]
    };
 
-    const filteredMovies = this.filterMovies(responseAPI.results, wineName, wineColor, wineCountry, wineRegions, wineVintage);
+    const filteredMovies = this.filterMovies(responseAPI.results, purchase_web_sources, purchase_android_sources, purchase_ios_sources, genres);
 
     return (
-      <div className="Wines">
+      <div className="Movies">
         <Nav />
 
         
         <div className="Container">
           <div className="box1">
           <div className="filter-search">
-            <div className="wine-list">
+            <div className="movie-list">
               <h3>Filter your search:</h3>
               <ul className="list">
-                <li className="category-name">Wine</li>
+                <li className="category-name">purchase_web_sources</li>
                 {
-                  wineList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineName" onChange={this.handleFilter} /> {wine}</li>)
+                  purchase_web_sourcesList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="purchase_web_sources" onChange={this.handleFilter} /> {movie}</li>)
                 }
-                <li className="category-name">Color</li>
+                <li className="category-name">purchase_android_sources</li>
                 {
-                  colorList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineColor" onChange={this.handleFilter} /> {wine}</li>)
+                  purchase_android_sourcesList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="movieColor" onChange={this.handleFilter} /> {movie}</li>)
                 }
-                <li className="category-name">Country</li>
+                <li className="category-name">purchase_ios_sources</li>
                 {
-                  countryList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineCountry" onChange={this.handleFilter} /> {wine}</li>)
+                  purchase_ios_sourcesList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="movieCountry" onChange={this.handleFilter} /> {movie}</li>)
                 }
-                <li className="category-name">Regions</li>
+                <li className="category-name">Genres</li>
                 {
-                  regionsList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineRegions" onChange={this.handleFilter} /> {wine}</li>)
-                }
-                <li className="category-name">Vintage</li>
-                {
-                  vintageList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineVintage" onChange={this.handleFilter} /> {wine}</li>)
+                  genresList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="movieRegions" onChange={this.handleFilter} /> {movie}</li>)
                 }
               </ul>
             </div>  
           </div>
           </div>
           <div className="box2">
-          <div className="wine-banner">Banner</div>  
-          <div className="wine-cards">
-            <WineCards wines={filteredWines} />
+          {/* <div className="movie-banner">Banner</div>   */}
+          <div className="movie-cards">
+            <movieCards movies={filteredMovies} />
           </div>  
           </div> 
         </div>
