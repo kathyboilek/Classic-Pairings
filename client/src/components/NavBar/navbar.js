@@ -46,9 +46,11 @@ class Nav extends Component {
             <li><Link to="/wines">Wines</Link></li>
             <li><Link to="/recipes">Recipes</Link></li>
             <li><Link to="/movies">Movies</Link></li>
-            <li><Link to="/events">Events</Link></li>
-            <li><Link to="/contactus">Contact Us</Link></li>
-            <li className='userInfo' onClick={() => this.toggleModal('sign-in')}>
+           <li className='userInfo' onClick={() => this.toggleModal('sign-in')}>
+           {/* <li><Link to="/events">Events</Link></li> */}
+            {/* <li><Link to="/contactus">Contact Us</Link></li> */}
+            <li className='userInfo' onClick={() => this.toggleModal('SignIn')}>
+
               <a href="#">
                 Sign In
               </a>
