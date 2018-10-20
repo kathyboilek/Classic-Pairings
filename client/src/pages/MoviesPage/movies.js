@@ -2,128 +2,174 @@ import React, { Component } from 'react';
 import './movies.css';
 import Nav from '../../components/NavBar';
 import Footer from '../../components/Footer';
-import MovieCards from '../../components/MovieCards';
 
-class Movies extends Component {
+
+class Wines extends Component {
   constructor() {
     super();
 
     this.handleFilter = this.handleFilter.bind(this);
     this.state = {
-      filterCriteria:''
+      movie_id:: '',
+      wineName: '',
+      wineColor: '',
+      wineCountry: '',
+      wineRegions: '',
+      Vintage: '',
     }
   }
 
   handleFilter = (event) => {
+    // console.log('value', event.target.value);
+    // console.log('name', event.target.name);
     this.setState({
       [event.target.name]: event.target.value
     })
   };
 
+  filterWines = (allWines, wineName, wineColor, wineCountry, wineRegions, wineVintage) => {
+    let filteredWines = allWines;
+    
+    if (wineName)
+      filteredWines = filteredWines.filter(wine => wine.wine === wineName);
+
+    if (wineColor)
+      filteredWines = filteredWines.filter(wine => wine.color === wineColor);
+    
+    if (wineCountry)
+      filteredWines = filteredWines.filter(wine => wine.country === wineCountry);
+
+    if (wineRegions)
+      filteredWines = filteredWines.filter(wine => wine.regions.includes(wineRegions));
+
+    if (wineVintage)
+      filteredWines = filteredWines.filter(wine => wine.vintage === wineVintage);
+
+
+    return filteredWines;
+  }
+
   render() {
-    const { filterCriteria } = this.state;
+    const { wineName, wineColor, wineCountry, wineRegions, wineVintage } = this.state;
+    // Mock API (Fake API for tests purpose)
+    const wineList = ['Petrus, Pomerol', 'Pinot Noir'];
+    const colorList = ['Red', 'White', 'Rosé', 'Sparkling', 'Cider'];
+    const countryList = ['France', 'Germany'];
+    const regionsList = ['Bordeaux', 'Alpine']
+    const vintageList = ['2000', '2001']
 
     const responseAPI = {
-      "total_results": 81047,
-      "total_returned": 25,
-      "results": [
-          {
-              "id": 157872,
-              "title": "Ready Player One",
-              "release_year": 2018,
-              "themoviedb": 333339,
-              "original_title": "Ready Player One",
-              "alternate_titles": [],
-              "imdb": "tt1677720",
-              "pre_order": false,
-              "in_theaters": false,
-              "release_date": "2018-03-28",
-              "rating": "NR",
-              "rottentomatoes": 771416185,
-              "freebase": "",
-              "wikipedia_id": 46270306,
-              "metacritic": "http://www.metacritic.com/movie/ready-player-one",
-              "common_sense_media": "https://www.commonsensemedia.org/movie-reviews/ready-player-one",
-              "poster_120x171": "http://static-api.guidebox.com/100117/thumbnails_movies_small/157872-9013263946-4637224753-7091846596-small-120x171-alt-.jpg",
-              "poster_240x342": "http://static-api.guidebox.com/100117/thumbnails_movies_medium/157872-7588576590-9450057405-5720443237-medium-240x342-alt-.jpg",
-              "poster_400x570": "http://static-api.guidebox.com/100117/thumbnails_movies/-alt--157872-3130895058-2806170848-4668295598-large-400x570-alt-.jpg"
-          },
-          {
-              "id": 159962,
-              "title": "A Quiet Place",
-              "release_year": 2018,
-              "themoviedb": 447332,
-              "original_title": "A Quiet Place",
-              "alternate_titles": [
-                  "Un lugar en silencio"
-              ],
-              "imdb": "tt6644200",
-              "pre_order": false,
-              "in_theaters": false,
-              "release_date": "2018-04-03",
-              "rating": "PG-13",
-              "rottentomatoes": 771473584,
-              "freebase": "",
-              "wikipedia_id": 54470227,
-              "metacritic": "http://www.metacritic.com/movie/a-quiet-place",
-              "common_sense_media": "https://www.commonsensemedia.org/movie-reviews/a-quiet-place",
-              "poster_120x171": "http://static-api.guidebox.com/100117/thumbnails_movies_small/159962-4148231470-2033376959-9914002381-small-120x171.jpg",
-              "poster_240x342": "http://static-api.guidebox.com/100117/thumbnails_movies_medium/159962-7972227093-3590170113-9434815342-medium-240x342.jpg",
-              "poster_400x570": "http://static-api.guidebox.com/100117/thumbnails_movies/159962-3714217316-1469129692-5023775622-large-400x570.jpg"
-          },
-          {
-              "id": 158269,
-              "title": "Avengers: Infinity War",
-              "release_year": 2018,
-              "themoviedb": 299536,
-              "original_title": "Avengers: Infinity War",
-              "alternate_titles": [
-                  "Avengers 3",
-                  "The Avengers 3: Part 1",
-                  "Avengers: Infinity War - Part I",
-                  "Avengers: Infinity War Opening Night Fan Event",
-                  "Marvel's The  Avengers 3: Infinity War",
-                  "Avengers: Infinity War with Bonus",
-                  "Avengers: Infinity War (2018)",
-                  "Avengers: Infinity War. Part I",
-                  "Marvel's The Avengers 3: Infinity War",
-                  "The Avengers 3: Infinity War"
-              ],
-              "imdb": "tt4154756",
-              "pre_order": false,
-              "in_theaters": false,
-              "release_date": "2018-04-25",
-              "rating": "PG-13",
-              "rottentomatoes": 771401853,
-              "freebase": "",
-              "wikipedia_id": 44240443,
-              "metacritic": "http://www.metacritic.com/movie/avengers-infinity-war",
-              "common_sense_media": "https://api.commonsensemedia.org/movie-reviews/avengers-infinity-war",
-              "poster_120x171": "http://static-api.guidebox.com/100117/thumbnails_movies_small/158269-3827995961-2214148585-3661807836-small-120x171.jpg",
-              "poster_240x342": "http://static-api.guidebox.com/100117/thumbnails_movies_medium/158269-1289124387-7392260125-2034828211-medium-240x342.jpg",
-              "poster_400x570": "http://static-api.guidebox.com/100117/thumbnails_movies/-158269-8960080165-1942795487-7645747997-large-400x570.jpg"
-          }
-        ]
-    };
+      "purchase_web_sources": [
+        {
+            "source": "itunes",
+            "display_name": "iTunes",
+            "id": 7951570,
+            "link": "https://itunes.apple.com/us/tv-season/the-winds-of-winter/id1091363548?i=1127951326&at=10laHb",
+            "formats": [
+                {
+                    "price": "2.99",
+                    "format": "SD",
+                    "type": "purchase"
+                },
+                {
+                    "price": "3.99",
+                    "format": "HD",
+                    "type": "purchase"
+                }
+            ]
+        }
+    ],
+    "purchase_ios_sources": [
+        {
+            "source": "itunes",
+            "display_name": "iTunes",
+            "id": 7951570,
+            "link": "itms://itunes.apple.com/us/tv-season/the-winds-of-winter/id1091363548?i=1127951326&at=10laHb",
+            "app_name": "iTunes",
+            "app_link": 1,
+            "app_required": 1,
+            "app_download_link": "itms-apps://",
+            "formats": [
+                {
+                    "price": "2.99",
+                    "format": "SD",
+                    "type": "purchase"
+                },
+                {
+                    "price": "3.99",
+                    "format": "HD",
+                    "type": "purchase"
+                }
+            ]
+        }
+    ],
+    "purchase_android_sources": [
+        {
+            "source": "vudu",
+            "display_name": "VUDU",
+            "id": 7951714,
+            "link": "vuduapp://780646",
+            "app_name": "VUDU",
+            "app_link": 1,
+            "app_required": 1,
+            "app_download_link": "https://play.google.com/store/apps/details?id=air.com.vudu.air.DownloaderTablet",
+            "formats": [
+                {
+                    "price": "2.99",
+                    "format": "SD",
+                    "type": "purchase"
+                },
+                {
+                    "price": "3.99",
+                    "format": "HD",
+                    "type": "purchase"
+                }
+            ]
+        }
+    ]
+   };
 
-    const filteredMovies = responseAPI.results.filter(movie => movie.title.toLocaleLowerCase().includes(filterCriteria));
-    
+    const filteredMovies = this.filterMovies(responseAPI.results, wineName, wineColor, wineCountry, wineRegions, wineVintage);
+
     return (
-      <div className="">
+      <div className="Wines">
         <Nav />
+
+        
         <div className="Container">
           <div className="box1">
           <div className="filter-search">
             <div className="wine-list">
               <h3>Filter your search:</h3>
-              <input type="text" value={filterCriteria} name="filterCriteria" onChange={this.handleFilter} />
+              <ul className="list">
+                <li className="category-name">Wine</li>
+                {
+                  wineList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineName" onChange={this.handleFilter} /> {wine}</li>)
+                }
+                <li className="category-name">Color</li>
+                {
+                  colorList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineColor" onChange={this.handleFilter} /> {wine}</li>)
+                }
+                <li className="category-name">Country</li>
+                {
+                  countryList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineCountry" onChange={this.handleFilter} /> {wine}</li>)
+                }
+                <li className="category-name">Regions</li>
+                {
+                  regionsList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineRegions" onChange={this.handleFilter} /> {wine}</li>)
+                }
+                <li className="category-name">Vintage</li>
+                {
+                  vintageList.map(wine => <li key={wine}><input value={wine} type="checkbox" name="wineVintage" onChange={this.handleFilter} /> {wine}</li>)
+                }
+              </ul>
             </div>  
           </div>
           </div>
           <div className="box2">
-          {/* <div className="wine-banner">Banner</div>   */}
+          <div className="wine-banner">Banner</div>  
           <div className="wine-cards">
-            <MovieCards movies={filteredMovies} />
+            <WineCards wines={filteredWines} />
           </div>  
           </div> 
         </div>
@@ -132,5 +178,6 @@ class Movies extends Component {
     );
   }
 }
+
 
 export default Movies;
