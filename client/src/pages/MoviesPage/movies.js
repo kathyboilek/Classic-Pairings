@@ -10,7 +10,7 @@ class Wines extends Component {
 
     this.handleFilter = this.handleFilter.bind(this);
     this.state = {
-      lwin: '',
+      movie_id:: '',
       wineName: '',
       wineColor: '',
       wineCountry: '',
@@ -129,7 +129,7 @@ class Wines extends Component {
     ]
    };
 
-    const filteredWines = this.filterWines(responseAPI.results, wineName, wineColor, wineCountry, wineRegions, wineVintage);
+    const filteredMovies = this.filterMovies(responseAPI.results, wineName, wineColor, wineCountry, wineRegions, wineVintage);
 
     return (
       <div className="Wines">
