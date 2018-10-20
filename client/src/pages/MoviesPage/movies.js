@@ -29,11 +29,8 @@ class Movies extends Component {
   filterMovies = (allMovies, movie_id, purchase_web_sources, purchase_android_sources, purchase_ios_sources, genres) => {
     let filteredMovies = allMovies;
 
-    if (allMovies)
-    filteredMovies = filteredMovies.filter(movie => movie.movie === allMovies);
-
     if (movie_id)
-      filteredMovies = filteredMovies.filter(movie => movie.movie === movie_id);
+      filteredMovies = filteredMovies.filter(movie => movie.movie_id === movie_id);
 
     if (purchase_web_sources)
       filteredMovies = filteredMovies.filter(movie => movie.purchase_web_sources.includes(purchase_web_sources));
@@ -52,8 +49,9 @@ class Movies extends Component {
   }
 
   render() {
-    const { movie_id, purchase_web_sources, purchase_android_source, purchase_ios_sources, genres } = this.state;
+    const { movie_id, purchase_web_sources, purchase_android_sources, purchase_ios_sources, genres } = this.state;
     // Mock API (Fake API for tests purpose)
+    const movie_idList = ['7951570'];
     const purchase_web_sourcesList = ['itunes'];
     const purchase_android_sourcesList = ['vudu'];
     const purchase_ios_sourcesList = ['itunes'];
@@ -130,7 +128,7 @@ class Movies extends Component {
     ]
    };
 
-    const filteredMovies = this.filterMovies(responseAPI.results, purchase_web_sources, purchase_android_sources, purchase_ios_sources, genres);
+    const filteredMovies = this.filterMovies(responseAPI.results, movie_id, purchase_web_sources, purchase_android_sources, purchase_ios_sources, genres);
 
     return (
       <div className="Movies">
@@ -143,21 +141,25 @@ class Movies extends Component {
             <div className="movie-list">
               <h3>Filter your search:</h3>
               <ul className="list">
+              <li className="category-name">Movie ID</li>
+                {
+                  movie_idList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="purchase_web_sources" onChange={this.handleFilter} /> {movie}</li>)
+                }
                 <li className="category-name">purchase_web_sources</li>
                 {
                   purchase_web_sourcesList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="purchase_web_sources" onChange={this.handleFilter} /> {movie}</li>)
                 }
                 <li className="category-name">purchase_android_sources</li>
                 {
-                  purchase_android_sourcesList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="movieColor" onChange={this.handleFilter} /> {movie}</li>)
+                  purchase_android_sourcesList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="purchase_android_sources" onChange={this.handleFilter} /> {movie}</li>)
                 }
                 <li className="category-name">purchase_ios_sources</li>
                 {
-                  purchase_ios_sourcesList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="movieCountry" onChange={this.handleFilter} /> {movie}</li>)
+                  purchase_ios_sourcesList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="purchase_ios_sources" onChange={this.handleFilter} /> {movie}</li>)
                 }
                 <li className="category-name">Genres</li>
                 {
-                  genresList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="movieRegions" onChange={this.handleFilter} /> {movie}</li>)
+                  genresList.map(movie => <li key={movie}><input value={movie} type="checkbox" name="genres" onChange={this.handleFilter} /> {movie}</li>)
                 }
               </ul>
             </div>  
