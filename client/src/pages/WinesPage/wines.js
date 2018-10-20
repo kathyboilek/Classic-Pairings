@@ -3,7 +3,7 @@ import Nav from '../../components/NavBar';
 import './wines.css';
 import Footer from '../../components/Footer';
 import WineCards from '../../components/WineCards';
-import winebanner from '../../images/wine-banner.png';  
+// import winebanner from '../../images/wine-banner.png';  
 
 class Wines extends Component {
   constructor() {

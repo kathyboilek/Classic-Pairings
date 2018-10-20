@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 // import { Modal, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import UserActions from '../UserActionsModal';
 // import userInfo from '../userInfo';
-import SignIn from '../../SignIn';
-import SignUp from '../../SignUp';
+// import SignIn from '../../SignIn';
+// import SignUp from '../../SignUp';
 import logo from '../../images/logo-wine.png';
 
 import './navbar.css';

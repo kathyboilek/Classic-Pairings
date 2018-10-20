@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+import { Modal, Button } from 'react-bootstrap';
 
 import './useractions.css';
 import logo from '../../images/logo-wine.png';

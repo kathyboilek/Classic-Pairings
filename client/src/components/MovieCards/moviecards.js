@@ -1,7 +1,6 @@
 import React from 'react';
 import './moviecards.css';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardImg, CardBody, CardTitle } from 'reactstrap';
 
 const WineCards = (props) => {
   return (
@@ -12,7 +11,7 @@ const WineCards = (props) => {
             <CardImg top width="100%" src={movie.poster_120x171} alt="Card image cap" />
             <CardBody>
               <CardTitle>{movie.title}</CardTitle>
-              <a href={movie.common_sense_media} target="_blank">More Info</a>
+              <a href={movie.common_sense_media} target="_blank" rel="noopener noreferrer">More Info</a>
             </CardBody>
           </Card>
         ))
