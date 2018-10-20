@@ -1,7 +1,7 @@
 import React from 'react';
 import './recipecards.css';
-import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button } from 'reactstrap';
+import { Card, CardImg, CardBody,
+  CardTitle } from 'reactstrap';
 
 const WineCards = (props) => {
   return (
@@ -12,7 +12,7 @@ const WineCards = (props) => {
             <CardImg top width="100%" src={recipe.image_url} alt="Card image cap" />
             <CardBody>
               <CardTitle>{recipe.title}</CardTitle>
-              <a href={recipe.source_url} target="_blank">More Info</a>
+              <a href={recipe.source_url} target="_blank" rel="noopener noreferrer">More Info</a>
             </CardBody>
           </Card>
         ))

@@ -20,6 +20,7 @@ class SignUp extends React.Component {
     })
   }
   signUp = () => {
+    console.log('signUp');
     const { username, password, email } = this.state
     Auth.signUp({
       username,
