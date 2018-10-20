@@ -11,11 +11,11 @@ class Wines extends Component {
     this.handleFilter = this.handleFilter.bind(this);
     this.state = {
       lwin: '',
-      wine: '',
-      color: '',
-      country: '',
-      regions: '',
-      vintage: '',
+      wineName: '',
+      wineColor: '',
+      wineCountry: '',
+      wineRegions: '',
+      Vintage: '',
     }
   }
 
