@@ -3,7 +3,7 @@ const db = require("../models");
 // Defining methods for the pairingController
 module.exports = {
   getAllRest: function(req, res) {
-    db.Restaurant
+    db.movie
       .find({
         'hasFood' : 'true',
         'hasDrink' : 'true',

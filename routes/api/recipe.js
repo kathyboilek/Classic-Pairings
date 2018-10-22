@@ -13,6 +13,17 @@ router.get("/all", (req, res) => {
         .catch(error => console.log(req.json(error)))
 });
 
+//To get recipes use:  https://www.food2fork.com/api/get 
+// recipe: List of Recipe Parameters ->
+// 	image_url: URL of the image
+// 	source_url: Original Url of the recipe on the publisher's site
+// 	f2f_url: Url of the recipe on Food2Fork.com
+// 	title: Title of the recipe
+// 	publisher: Name of the Publisher
+// 	publisher_url: Base url of the publisher
+// 	social_rank: The Social Ranking of the Recipe (As determined by our Ranking Algorithm)
+//     ingredients: The ingredients of this recipe
+    
 // router.route("/")
 //     .get(pairingController.findAll)
 //     .post(pairingController.create);
