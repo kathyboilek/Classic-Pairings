@@ -1,7 +1,10 @@
 import React from 'react';
+import Auth from '../../Auth';
 import './winecards.css';
 import { Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle } from 'reactstrap';
+  CardTitle, CardSubtitle, Button } from 'reactstrap';
+
+const auth = new Auth();
 
 
 const WineCards = (props) => {
@@ -16,7 +19,7 @@ const WineCards = (props) => {
               <CardSubtitle>Vintage: {wine.vintage}</CardSubtitle>
               <CardText>Country: {wine.country}</CardText>
               <CardText>Region: {wine.regions}</CardText>
-              {/* <Button>Button</Button> */}
+              { auth.isAuthenticated() && <Button>Button</Button>}
             </CardBody>
           </Card>
         ))

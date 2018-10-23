@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Auth from '../../Auth';
 // import { Modal, Button, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 import UserActions from '../UserActionsModal';
 // import userInfo from '../userInfo';
-// import SignIn from '../../SignIn';
-// import SignUp from '../../SignUp';
 import logo from '../../images/logo-wine.png';
 
 import './navbar.css';
+
+const auth = new Auth();
 
 class Nav extends Component {
  constructor() {
@@ -26,6 +27,10 @@ class Nav extends Component {
    });
  }
 
+ logout() {
+   auth.logout();
+ }
+
  render() {
    const { showModal, typeModal } = this.state;
    return (
@@ -42,23 +47,30 @@ class Nav extends Component {
          </div>
          <ul className="navigation">
            <li><Link to="/">Home</Link></li>
-           {/* <li><Link to="/join">Join</Link></li> */}
            <li><Link to="/wines">Wines</Link></li>
            <li><Link to="/recipes">Recipes</Link></li>
            <li><Link to="/movies">Movies</Link></li>
-           {/* <li><Link to="/events">Events</Link></li>
-           <li><Link to="/contactus">Contact Us</Link></li> */}
-           <li className='userInfo' onClick={() => this.toggleModal('sign-in')}>
-             <a href="#">
-               Sign In
-             </a>
-           </li>
-           {/* <li className='userinfo'><Link to="/getstarted">Get Started</Link></li> */}
-           <li className='userInfo' onClick={() => this.toggleModal('sign-up')}>
-             <a href="#">
-               Sign Up
-             </a>
-           </li>
+
+           { !auth.isAuthenticated() ? (
+            <React.Fragment>
+              <li className='userInfo' onClick={() => this.toggleModal('sign-in')}>
+                <a href="#">
+                  Sign In
+                </a>
+              </li>
+              <li className='userInfo' onClick={() => this.toggleModal('sign-up')}>
+                <a href="#">
+                  Sign Up
+                </a>
+              </li>
+            </React.Fragment>
+            ) : (
+              <li className='userInfo' onClick={() => this.logout()}>
+                <a href="#">
+                  Logout
+                </a>
+              </li>
+            )}
          </ul>
        </div>
      </div>

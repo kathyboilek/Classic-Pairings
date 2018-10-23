@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import Routes from './routes';
 //import {ApolloProvider,} from 'react-apollo';
 import './App.css';
-import Header from './Header'
 
 
 
@@ -36,9 +35,7 @@ import Header from './Header'
     render() {
       return (
         <div>
-          <Routes />
-          <Header />          
-        
+          <Routes />        
         </div>
     );
   }
