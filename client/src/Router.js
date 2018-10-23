@@ -9,6 +9,7 @@ import {
 import { Auth } from 'aws-amplify'
 
 import Authenticator from './Authenticator'
+
 import {
   Home,
   Route1

@@ -16,6 +16,10 @@ class Home extends Component {
           {/* <div className="arrow-down"></div> */}
           {/* <div className="banner3">3</div> */}
         </div>
+        <div className="pack2">
+          <div className="wine-info">
+          </div>  
+        </div>
         <Footer />  
       </div>
     );
