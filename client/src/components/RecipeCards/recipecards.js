@@ -8,11 +8,11 @@ const WineCards = (props) => {
     <React.Fragment>
       {
         props.recipes.map(recipe => (
-          <Card key={recipe.recipe_id}>
-            <CardImg top width="100%" src={recipe.image_url} alt="Card image cap" />
+          <Card key={recipe.recipe_id} onClick={() => window.open(recipe.source_url)} className="recipe-card">
+            <div className="recipe-img" style={{backgroundImage: `url(${recipe.image_url})`}}></div>
             <CardBody>
-              <CardTitle>{recipe.title}</CardTitle>
-              <a href={recipe.source_url} target="_blank" rel="noopener noreferrer">More Info</a>
+              <h6>{recipe.publisher}</h6>
+              <h5>{recipe.title}</h5>
             </CardBody>
           </Card>
         ))

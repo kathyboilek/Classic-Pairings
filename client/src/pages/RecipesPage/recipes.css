@@ -33,12 +33,52 @@
   flex-direction: row;
   flex-wrap: wrap;
   background-color: #FFF;
-  border: 3px solid #572A32;
+  border: 1px solid #EEE;
+  box-shadow: 1px 0 4px rgba(0,0,0,.1);
+  border-radius: 4px;
   color: #000;
   font-size: 12px;
+  padding: 20px;
   margin-left: 75px;
   margin-top: 30px;
   margin-bottom: 20px;
+  width: 100%;
+}
+
+.recipe-card {
+  width: calc(20% - 20px);
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0);
+  transition: all .2s ease-in-out;
+  cursor: pointer;
+}
+
+.recipe-card:hover {
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+.recipe-card h6 {
+  color: #A6A6A6;
+  padding: 0;
+  margin: 0;
+}
+
+.recipe-card h5 {
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 6px;
+  line-height: 22px;
+  color: #222;
+}
+
+.recipe-img {
+  height: 200px;
+  width: 100%;
+  background-size: cover;
+}
+
+.load-more {
   width: 100%;
 }
 
