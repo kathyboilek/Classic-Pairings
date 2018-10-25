@@ -2,18 +2,18 @@ const db = require("../models");
 
 // Defining methods for the pairingController
 module.exports = {
-  getAllRest: function(req, res) {
-    db.movie
+  getAllWine: function(req, res) {
+    db.Pairings
       .find({
-        'hasFood' : 'true',
+        'style' : 'true',
         'hasDrink' : 'true',
         'categories.title': req.body //This will be defaulted to All if nothing is specified or if All is specified, which should return All since all categories will contain an All category
       })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  getAllRestFood: function(req, res) {
-    db.Restaurant
+  getAllMovies: function(req, res) {
+    db.Pairings
       .find({
         'hasFood' : 'true',
         'categories.title': req.body //This will be defaulted to All if nothing is specified or if All is specified, which should return All since all categories will contain an All category
@@ -21,8 +21,8 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  getAllRestDrink: function(req, res) {
-    db.Restaurant
+  getAllRecipes: function(req, res) {
+    db.Pairings
       .find({
         'hasDrink' : 'true',
         'categories.title': req.body //This will be defaulted to All if nothing is specified or if All is specified, which should return All since all categories will contain an All category
