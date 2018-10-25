@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import Auth from '../../Auth';
 import './useractions.css';
-import logo from '../../images/logo-wine.png';
 
 const auth = new Auth();
 
@@ -14,6 +13,8 @@ class GetStarted extends Component {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleClose = this.handleClose.bind(this);
+
     // Input field states
     this.state = {
       username: '',
@@ -69,6 +70,10 @@ class GetStarted extends Component {
     }
     
   }
+
+  handleClose() {
+    this.setState({ show: false });
+  }
   
   render() {
     const { showModal, typeModal } = this.props;
@@ -97,6 +102,7 @@ class GetStarted extends Component {
                 <input ref="user_password" type="password" className="form-control" placeholder="Password" />
               </div>
               <button type="submit" className="btn btn-default">Submit</button>
+              <Button onClick={() => this.props.toggleModal()}>Close</Button>
             </form>
 
           </Modal.Body>

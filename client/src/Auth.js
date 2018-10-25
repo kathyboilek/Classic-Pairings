@@ -5,7 +5,7 @@ export default class Auth {
   auth0 = new auth0.WebAuth({
     domain: 'classicpairings.auth0.com',
     clientID: 'TG6iRWyjS2GSTnqkLqhEu0Sb0L0nj515',
-    redirectUri: 'http://bdd90fa5.ngrok.io/wines',
+    redirectUri: 'http://localhost:3000/wines',
     responseType: 'token id_token',
     scope: 'openid profile'
   });
