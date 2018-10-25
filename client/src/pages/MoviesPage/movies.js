@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import Nav from '../../components/NavBar';
 import MovieCards from '../../components/MovieCards';
 import Footer from '../../components/Footer';
-
 import './movies.css';
 
 const apiKey = 'bb8fc13dd42a95bd2852111e40ea8f23';
