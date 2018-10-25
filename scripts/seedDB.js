@@ -194,10 +194,87 @@ const wineSeed = [
     body: "Light-bodied"
   }
 ];
+const movieSeed = [
+  {
+    title: "The Searchers",
+    description: "Often cited as one of the most complex and greatest Westerns ever made, director John Ford's moody tale stars John Wayne as Ethan Edwards, a Civil War veteran who returns to his settler brother's West Texas home and finds that his family has been attacked by the Comanche. Joined by a half-breed youth (Jeffrey Hunter) raised by the family, Edwards begins an all-consuming search for his surviving niece (Natalie Wood), now living with her captors. Ward Bond, Vera Miles also star; based on Alan Le May’s 1954 novel. 119 min.  The perfect sidekick to a complex red from the rugged terrain of the Mendoza region",
+    image:"http://media.aent-m.com/graphics/items/sdimages/b/160/4/6/9/4/2814964.jpg",
+    genre:	"Westerns-Classics",
+    director:	"John Ford",
+    originalyear:	"1956"
+  },
+  {
+    title: "Leave Her to Heaven",
+    description: "A beautiful neurotic will stop at nothing to hold onto her husband's love.",
+    image:"http://i.cdn.turner.com/v5cache/TCM/Images/Dynamic/i98/leavehertoheaven_1945_mp_1sht_1200_021120101256.jpg",
+    genre:	"Film Noir",
+    director:	"John M. Stahl",
+    originalyear:	"1946"
+  },
+  {
+    title: "On an Island with You",
+    description: "A movie star falls for a handsome naval officer during location shooting in Hawaii. 107 mins.",
+    image:"http://i.cdn.turner.com/v5cache/TCM/Images/Dynamic/i49/ONANISLANDWITHYOU_00427430_1143x1754_102020061737.JPG",
+    genre:	"Romance",
+    director:	"Richard Thorpe",
+    originalyear:	"1948"
+  },
+  {
+    title: "High Society",
+    description: "In this musical version of The Philadelphia Story, tabloid reporters invade a society wedding. 111 mins.",
+    image:"http://media.aent-m.com/graphics/items/sdimages/c/160/7/2/5/1/1381527.jpg",
+    genre:	"Musical",
+    director:	"Charles Walters",
+    originalyear:	"1956"
+  },
+  {
+    title: "North by Northwest",
+    description: "An advertising man is mistaken for a spy, triggering a deadly cross-country chase. 136 mins.",
+    image:"http://media.aent-m.com/graphics/items/sdimages/b/160/4/7/6/9/1549674.jpg",
+    genre:	"Suspense",
+    director:	"Alfred Hitchcock",
+    originalyear:	"1959"
+  },
+  {
+    title: "Frankenstein",
+    description: "A crazed scientist creates a living being from body parts, not realizing it has a madman's brain. 70 mins.",
+    image:"http://media.aent-m.com/graphics/items/sdimages/a/160/0/4/9/2/272940.jpg",
+    genre:	"Horror",
+    director:	"James Whale",
+    originalyear:	"1931"
+  },
+  {
+    title: "Bride of Frankenstein",
+    description: "To save his wife, Baron Frankenstein must build a mate for his monster. 73 mins.",
+    image:"http://media.aent-m.com/graphics/items/sdimages/b/160/4/7/7/1/281774.jpg",
+    genre:	"Horror",
+    director:	"James Whale",
+    originalyear:	"1935"
+  },
+  {
+    title: "The Conversation",
+    description: "A surveillance expert uncovers a murder plot within a corrupt corporation. 113 mins.",
+    image:"http://media.aent-m.com/graphics/items/sdimages/b/160/5/5/7/3/1663755.jpg",
+    genre:	"Mystery",
+    director:	"Francis Ford Coppola",
+    originalyear:	"1974"
+  },
+  {
+    title: "The Graduate",
+    description: "A recent college graduate has an affair with his neighbor''s wife, then falls for their daughter. 105 mins.",
+    image:"http://media.aent-m.com/graphics/items/sdimages/a/160/0/8/8/2/3052880.jpg",
+    genre:	"Romance",
+    director:	"Mike Nichols",
+    originalyear:	"1967"
+  },
 
-db.Pairings
+
+
+];
+  
+  db.Pairings
   .remove({})
-  .then(() => db.Pairings.collection.insertMany(wineSeed))
+  .then(() => db.Pairings.collection.insertMany(wineSeed, movieSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
