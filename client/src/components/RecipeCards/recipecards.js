@@ -1,7 +1,6 @@
 import React from 'react';
 import './recipecards.css';
-import { Card, CardImg, CardBody,
-  CardTitle } from 'reactstrap';
+import { Card, CardBody } from 'reactstrap';
 
 const WineCards = (props) => {
   return (
