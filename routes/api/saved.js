@@ -1,4 +1,4 @@
-const router = require("express").Router();
+// const router = require("express").Router();
 const pairingController = require("../../controllers/pairingController");
 
 router.route("/")
