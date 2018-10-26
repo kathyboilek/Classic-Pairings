@@ -8,6 +8,7 @@ import Recipes from '../pages/RecipesPage';
 import Movies from '../pages/MoviesPage';
 import Events from '../pages/EventsPage';
 import Contact from '../pages/ContactPage';
+import Results from '../pages/ResultsPage';
 
 const Routes = () => (
   <Router>
@@ -20,6 +21,7 @@ const Routes = () => (
        <Route exact path="/movies" component={Movies} />
        <Route exact path="/events" component={Events} />
        <Route exact path="/contactus" component={Contact} />
+       <Route exact path="/results" component={Results} />
      </Switch>
   </Router> 
  );
