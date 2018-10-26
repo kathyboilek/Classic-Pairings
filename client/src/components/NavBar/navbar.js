@@ -50,6 +50,7 @@ class Nav extends Component {
            <li><Link to="/wines">Wines</Link></li>
            <li><Link to="/recipes">Recipes</Link></li>
            <li><Link to="/movies">Movies</Link></li>
+           <li><Link to="/results">Results</Link></li>
 
            { !auth.isAuthenticated() ? (
             <React.Fragment>
