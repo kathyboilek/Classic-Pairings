@@ -1,14 +1,12 @@
-const express = require('express');
-const graphqlHTTP = require('express-graphql');
+// const express = require('express');
 const mongoose = require("mongoose");
 const routes = require("./routes");
-const { buildSchema } = require('graphql');
 
 let db = require("./models");
 
 
 
-const app = express();
+// const app = express();
 const PORT = 3000;
 
 // Construct a schema, using GraphQL schema language
@@ -18,22 +16,22 @@ const schema = buildSchema(`
   }
 `);
 
-app.use('/graphql', graphqlHTTP({
-  schema: schema,
-  rootValue: root,
-  graphiql: true,
-}));
+// app.use('/graphql', graphqlHTTP({
+//   schema: schema,
+//   rootValue: root,
+//   graphiql: true,
+// }));
 
 //const token = 'YOUR TOKEN HERE';
 //const client = createClient(token);
 
 app.listen(3001);
-console.log('Running a GraphQL API server at localhost:3001/graphql');
+// console.log('Running a GraphQL API server at localhost:3001/graphql');
 
 
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
