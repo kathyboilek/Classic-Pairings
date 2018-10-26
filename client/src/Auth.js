@@ -19,17 +19,18 @@ export default class Auth {
 
   login(username, password) {
     console.log('Login authorize', username, password);
-    this.auth0.login(
-      { realm: 'Username-Password-Authentication', username, password },
-      (err, authResult) => {
-        console.log('authResult', authResult);
-        if (err) {
-          console.log('err', err);
-          alert(`Error: ${err.description}`);
-          return;
-        }
-      }
-    );
+    this.auth0.authorize();
+    // this.auth0.login(
+    //   { realm: 'Username-Password-Authentication', username, password },
+    //   (err, authResult) => {
+    //     console.log('authResult', authResult);
+    //     if (err) {
+    //       console.log('err', err);
+    //       alert(`Error: ${err.description}`);
+    //       return;
+    //     }
+    //   }
+    // );
   }
 
   signup(email, password) {

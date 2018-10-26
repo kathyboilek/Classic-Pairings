@@ -54,7 +54,9 @@
 }
 
 @media all and (max-width: 1000px) {
-  
+  body {
+    background: red;
+  }
   .header {
     height: auto;
   }
@@ -89,6 +91,9 @@
 }
 
 @media all and (max-width: 600px) {
+  body {
+    background: red;
+  }
   .header {
     height: auto;
   }
