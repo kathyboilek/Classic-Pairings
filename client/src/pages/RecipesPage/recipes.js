@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import Nav from '../../components/NavBar';
 import Footer from '../../components/Footer';
 import RecipeCards from '../../components/RecipeCards';
-
-import recipesJson from './recipes.json';
-
+import Loader from '../../components/Loader';
 import './recipes.css';
 
 const apiKey = 'a7065834b36529e3cf15043f9180d627';
@@ -32,13 +29,13 @@ class Recipes extends Component {
     const { recipes, page } = this.state;
 
     axios.get(`https://www.food2fork.com/api/search?key=${apiKey}&q=&page=${page}`)
-    .then(res => {
-      if(!res.data.error) {
-        this.setState({
-          recipes: recipes.concat(res.data.recipes)
-        });
-      }
-    });
+      .then(res => {
+        if(!res.data.error) {
+          this.setState({
+            recipes: recipes.concat(res.data.recipes)
+          });
+        }
+      });
   }
 
   loadMore = () => {
@@ -58,12 +55,7 @@ class Recipes extends Component {
   };
 
   render() {
-    const { filterCriteria, recipes } = this.state;
-
-    const responseAPI = recipesJson;
-
-    // const filteredRecipes = responseAPI.recipes.filter(recipe => recipe.title.toLocaleLowerCase().includes(filterCriteria));
-    // console.log('filterCriteria', filterCriteria);
+    const { recipes } = this.state;
     
     return (
       <div className="">
@@ -76,7 +68,7 @@ class Recipes extends Component {
                 <div className="text-center load-more">
                 { recipes.length ? 
                   <button onClick={() => this.loadMore()} className="btn btn-primary">Load More</button>
-                : 'Loading Recipes...'}
+                : <Loader />}
                 </div>
             </div>  
           </div> 

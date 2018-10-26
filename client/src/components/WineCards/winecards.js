@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Auth from '../../Auth';
 import './winecards.css';
-import { Card, CardImg, CardText, CardBody,
+import { Card, CardImg, CardBody,
   CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 const auth = new Auth();
@@ -36,7 +35,7 @@ class WineCards extends Component {
                     </CardSubtitle>
                   </div>
 
-                  { auth.isAuthenticated() && <Link to={`/results/${wine.code}`}><Button className="select-wine">Select Wine</Button></Link>}
+                  { auth.isAuthenticated() && <Button className="select-wine" onClick={() => this.props.selectWine(wine)}>Select Wine</Button>}
                 </div>
               </CardBody>
             </Card>

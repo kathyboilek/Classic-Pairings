@@ -11,11 +11,11 @@ import './navbar.css';
 const auth = new Auth();
 
 class Nav extends Component {
- constructor() {
-   super();
+ constructor(props) {
+   super(props);
 
    this.state = {
-     typeModal: '',
+     typeModal: 'sign-up',
      showModal: false
    };
  }
@@ -36,10 +36,10 @@ class Nav extends Component {
    return (
      <div>
        <UserActions
-           showModal={showModal}
-           typeModal={typeModal}
-           toggleModal={() => this.toggleModal('')}
-         />
+          showModal={showModal}
+          typeModal={typeModal}
+          toggleModal={() => this.toggleModal('')}
+        />
        <div className="header">
 
          <div className="logo">
@@ -54,21 +54,21 @@ class Nav extends Component {
            { !auth.isAuthenticated() ? (
             <React.Fragment>
               <li className='userInfo' onClick={() => this.toggleModal('sign-in')}>
-                <a href="#">
+                <span>
                   Sign In
-                </a>
+                </span>
               </li>
               <li className='userInfo' onClick={() => this.toggleModal('sign-up')}>
-                <a href="#">
+                <span>
                   Sign Up
-                </a>
+                </span>
               </li>
             </React.Fragment>
             ) : (
               <li className='userInfo' onClick={() => this.logout()}>
-                <a href="#">
+                <span>
                   Logout
-                </a>
+                </span>
               </li>
             )}
          </ul>

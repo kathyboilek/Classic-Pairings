@@ -91,7 +91,7 @@ class GetStarted extends Component {
                 <input ref="user_email" type="email" className="form-control" placeholder="Email" />
               </div>
               <div className="form-group">
-                <label>Password</label>
+                <label>Password {typeModal === 'sign-up' && <span>(Must have at least 8 characters)</span>}</label>
                 <input ref="user_password" type="password" className="form-control" placeholder="Password" />
               </div>
               <button type="submit" className="btn btn-default">Submit</button>
