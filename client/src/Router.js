@@ -6,7 +6,9 @@ import {
   Redirect,
   BrowserRouter as Router
 } from 'react-router-dom'
-import { Auth } from 'aws-amplify'
+
+//I don't know if Debora needs this for her AuthO.
+// import { Auth } from 'aws-amplify'
 
 import Authenticator from './Authenticator'
 
