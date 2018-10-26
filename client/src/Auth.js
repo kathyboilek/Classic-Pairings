@@ -17,7 +17,6 @@ export default class Auth {
    this.isAuthenticated = this.isAuthenticated.bind(this);
  }
 
-<<<<<<< HEAD
  login(username, password) {
    console.log('Login authorize', username, password);
    this.auth0.login(
@@ -32,22 +31,6 @@ export default class Auth {
      }
    );
  }
-=======
-  login(username, password) {
-    console.log('Login authorize', username, password);
-    this.auth0.login(
-      { realm: 'Username-Password-Authentication', username, password },
-      (err, authResult) => {
-        console.log('authResult', authResult);
-        if (err) {
-          console.log('err', err);
-          alert(`Error: ${err.description}`);
-          return;
-        }
-      }
-    );
-  }
->>>>>>> 9104ccd809fa555c74c1d0511b79fde13d02b237
 
  signup(email, password) {
    console.log('SignUp');
