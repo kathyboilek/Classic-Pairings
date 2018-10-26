@@ -1,6 +1,6 @@
 // const router = require("express").Router();
 const pairingController = require("../../controllers/pairingController");
-const axios = require("axios");
+// const axios = require("axios");
 
 // const apiKey = 'fd16e76533488fd2277da0ba51d1fffe3ad417b7'
 
