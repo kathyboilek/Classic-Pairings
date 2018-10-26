@@ -5,8 +5,6 @@ import './useractions.css';
 
 const auth = new Auth();
 
-
-
 class GetStarted extends Component {
   constructor() {
     // In order to access react methods you have to bind
@@ -43,10 +41,6 @@ class GetStarted extends Component {
     
     if (typeModal === 'sign-in') {
       // Add here code to sign in
-
-      
-
-
     }
     else if (typeModal === 'register') {
       // Add here code to register
@@ -77,7 +71,6 @@ class GetStarted extends Component {
   
   render() {
     const { showModal, typeModal } = this.props;
-    console.log( localStorage.getItem('access_token') );
 
     if (!showModal) return null;
     
@@ -102,7 +95,7 @@ class GetStarted extends Component {
                 <input ref="user_password" type="password" className="form-control" placeholder="Password" />
               </div>
               <button type="submit" className="btn btn-default">Submit</button>
-              <Button onClick={() => this.props.toggleModal()}>Close</Button>
+              <Button className="close-button" onClick={() => this.props.toggleModal()}>Close</Button>
             </form>
 
           </Modal.Body>

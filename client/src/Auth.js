@@ -18,17 +18,19 @@ export default class Auth {
   }
 
   login(username, password) {
-    console.log('Login');
-    this.auth0.login(
-      { realm: 'Username-Password-Authentication', username, password },
-      (err, authResult) => {
-        if (err) {
-          console.log(err);
-          alert(`Error: ${err.description}`);
-          return;
-        }
-      }
-    );
+    console.log('Login authorize', username, password);
+    this.auth0.authorize();
+    // this.auth0.login(
+    //   { realm: 'Username-Password-Authentication', username, password },
+    //   (err, authResult) => {
+    //     console.log('authResult', authResult);
+    //     if (err) {
+    //       console.log('err', err);
+    //       alert(`Error: ${err.description}`);
+    //       return;
+    //     }
+    //   }
+    // );
   }
 
   signup(email, password) {
@@ -56,7 +58,9 @@ export default class Auth {
   }
 
   handleAuthentication() {
+    console.log('handleAuthentication');
     this.auth0.parseHash((err, authResult) => {
+      console.log('authResult')
       if (authResult && authResult.accessToken && authResult.idToken) {
         this.setSession(authResult);
         history.replace('/wines');
@@ -68,6 +72,7 @@ export default class Auth {
   }
 
   setSession(authResult) {
+    console.log('setSession');
     // Set the time that the Access Token will expire at
     let expiresAt = JSON.stringify((authResult.expiresIn * 1000) + new Date().getTime());
     localStorage.setItem('access_token', authResult.accessToken);
