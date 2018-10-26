@@ -12,7 +12,9 @@ class Results extends Component {
           <div className="storage">
               <div className="capsule">
                 <div className="hero-banner"></div> 
-                <div className="results-cards"></div>  
+                <div className="results-cards">
+                  <h1>Your perfect match...</h1>
+                </div>  
               </div> 
           </div>
 
