@@ -7,9 +7,6 @@ import {
   BrowserRouter as Router
 } from 'react-router-dom'
 
-//I don't know if Debora needs this for her AuthO.
-// import { Auth } from 'aws-amplify'
-
 import Authenticator from './Authenticator'
 
 import {
@@ -22,25 +19,8 @@ class PrivateRoute extends React.Component {
     loaded: false,
     isAuthenticated: false
   }
-  componentDidMount() {
-    this.authenticate()
-    this.unlisten = this.props.history.listen(() => {
-      Auth.currentAuthenticatedUser()
-        .then(user => console.log('user: ', user))
-        .catch(() => {
-          if (this.state.isAuthenticated) this.setState({ isAuthenticated: false })
-        })
-    });
-  }
   componentWillUnmount() {
     this.unlisten()
-  }
-  authenticate() {
-    Auth.currentAuthenticatedUser()
-      .then(() => {
-        this.setState({ loaded: true, isAuthenticated: true })
-      })
-      .catch(() => this.props.history.push('/auth'))
   }
   render() {
     const { component: Component, ...rest } = this.props

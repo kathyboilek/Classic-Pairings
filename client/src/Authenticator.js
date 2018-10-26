@@ -15,7 +15,7 @@ class Authenticator extends Component {
   }
 
   render() {
-    return <h1>Oi...</h1>
+    return <h1>Hi</h1>
   }
 }
 

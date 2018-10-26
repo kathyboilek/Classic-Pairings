@@ -28,8 +28,9 @@
   line-height: 0
 }
 
-.navigation li a,
-.navigation li.userinfo a {
+.navigation li a, .navigation li span,
+.navigation li.userinfo a, .navigation li.userinfo span {
+  cursor: pointer;
   padding: 21px 19px;
   text-decoration: none;
   color: white;
@@ -54,9 +55,6 @@
 }
 
 @media all and (max-width: 1000px) {
-  body {
-    background: red;
-  }
   .header {
     height: auto;
   }
@@ -77,7 +75,7 @@
     font-size: 13px;
   }
 
-  .navigation li a {
+  .navigation li a, .navigation li span {
     font-size: 13px;
     padding: 22px 10px;
   }
@@ -91,9 +89,6 @@
 }
 
 @media all and (max-width: 600px) {
-  body {
-    background: red;
-  }
   .header {
     height: auto;
   }
@@ -106,7 +101,7 @@
   .navigation li {
     display: flex;
   }
-  .navigation li a {
+  .navigation li a, .navigation li span {
     width: 100%;
     text-align: center;
     padding: 13px 10px;
@@ -122,7 +117,6 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-flex-flow: row wrap;
   justify-content: flex-end;
 }
 
