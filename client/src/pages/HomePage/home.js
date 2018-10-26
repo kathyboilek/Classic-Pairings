@@ -43,8 +43,8 @@ class Home extends Component {
             <h1 className="wine-info-title">Wine, Recipe & Movie Pairing</h1>
           <div className="wines-texts">
             <h2 className="wine-info-subtitle">Wine, Recipe & Movie recommendations for hundreds of dishes and films.</h2>
-            <button onClick={() => this.toggleModal('sign-up')}>Open Modal</button>
             <h3 className="wine-info-text">Pair you favorite wine, a delicious dish and a classic movie that compliments its mood and nuances and you'll have an unforgettable experience.</h3>
+            <button className="getstarted btn btn-secondary" onClick={() => this.toggleModal('sign-up')}>Get Started</button>
           </div>  
           </div>  
         </div>

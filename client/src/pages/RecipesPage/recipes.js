@@ -32,7 +32,7 @@ class Recipes extends Component {
       .then(res => {
         if(!res.data.error) {
           this.setState({
-            recipes: recipes.concat(res.data.recipes)
+            recipes: recipes.concat(res.data.recipes.filter(recipe => recipe.recipe_id !== '47024' && recipe.recipe_id !== '54489'))
           });
         }
       });

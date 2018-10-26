@@ -34,8 +34,9 @@ class Results extends Component {
     axios.get(`https://www.food2fork.com/api/search?key=${apiKey}&q=&page1`)
       .then(res => {
         if(!res.data.error) {
+          const noCoffeeRecipes = res.data.recipes.filter(recipe => recipe.recipe_id !== '47024' && recipe.recipe_id !== '54489');
           this.setState({
-            recipe: res.data.recipes[Math.floor(Math.random()*res.data.recipes.length)]
+            recipe: noCoffeeRecipes[Math.floor(Math.random()*noCoffeeRecipes.length)]
           });
         }
       });
