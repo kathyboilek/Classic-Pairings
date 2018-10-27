@@ -39,6 +39,9 @@
     "concurrently": "^4.0.1",
     "nodemon": "^1.18.5"
   },
+  "engines": {
+    "node": "4.1.1"
+  },
   "peerDependencies": {
     "apollo-client": "^2.3.8",
     "axios": "0.18.0",
@@ -57,6 +60,7 @@
     "type": "git",
     "url": "git+https://github.com/kathyboilek/Classic-Pairings.git"
   },
+
   "author": "",
   "license": "ISC",
   "bugs": {
