@@ -50,7 +50,7 @@
   background: #401D22;
 }
 
-.navigation a:hover {
+.navigation a:hover, .navigation span:hover {
   background: #280103;
 }
 

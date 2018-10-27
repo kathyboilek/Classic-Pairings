@@ -1,7 +1,7 @@
 .Container {
   display: flex;
   max-width: 100%;
-  padding: 0px 25px;
+  padding: 0px 0;
 }
 
 .box1 {

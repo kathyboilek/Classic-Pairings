@@ -67,7 +67,7 @@ class Wines extends Component {
   }
 
   render() {
-    const { wineName, wineColor, wines, selectedWine } = this.state;
+    const { wineColor, wines, selectedWine } = this.state;
 
     if (selectedWine) return <Results wine={selectedWine} />;
 
@@ -83,7 +83,7 @@ class Wines extends Component {
             <div className="wine-list">
               <h3>Filter your search</h3>
 
-              <ul className="list">
+              {/* <ul className="list">
                 <li className="category-name">Search</li>
                 <li>
                   <form onSubmit={e => this.searchWine(e)}>
@@ -92,7 +92,7 @@ class Wines extends Component {
                     </div>
                   </form>
                 </li>
-              </ul>
+              </ul> */}
               
               <ul className="list">
                 <li className="category-name">Color</li>

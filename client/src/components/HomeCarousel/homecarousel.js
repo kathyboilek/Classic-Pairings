@@ -8,7 +8,7 @@ import pic3 from '../../images/wine-girl.jpg';
 export default class extends React.Component {
   render() {
     return (
-      <Carousel autoplay wrapAround autoplayInterval={1500} speed={700} pauseOnHover={false}>
+      <Carousel autoplay wrapAround autoplayInterval={1700} speed={1500} pauseOnHover={false}>
           <img alt="pic1" src={pic1} />
           <img alt="pic2" src={pic2} />
           <img alt="pic3" src={pic3} />
