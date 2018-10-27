@@ -7,7 +7,7 @@ let db = require("./models");
 
 
 // const app = express();
-const PORT = 3000;
+const PORT =  process.env.PORT || 3000;
 
 // Construct a schema, using GraphQL schema language
 const schema = buildSchema(`
@@ -53,6 +53,6 @@ app.get('/', (request, response) => {
   })
 })
 
-// app.listen(PORT, () => {
-//   console.log(`Server is running at PORT ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server is running at PORT ${PORT}`);
+});
