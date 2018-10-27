@@ -4,11 +4,12 @@ phases:
   install:
     commands:
       - npm install
+      - npm install nodemon
       - yarn install
   build:
     commands:
       - npm run build
-      - yarn run build
+      # - yarn run build
   post_build:
     commands:
       - mkdir -p build
